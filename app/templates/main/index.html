@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Home - E-Commerce App{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to our E-Commerce Store</h1>
+    <p class="lead">Discover amazing products at great prices.</p>
+    <hr class="my-4">
+    <p>Browse our catalog to find what you're looking for.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('products.product_list') }}" role="button">Shop Now</a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Wide Selection</h5>
+                <p class="card-text">Browse through our extensive catalog of products.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Secure Checkout</h5>
+                <p class="card-text">Shop with confidence using our secure payment system.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Fast Delivery</h5>
+                <p class="card-text">Get your products delivered quickly to your doorstep.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - E-Commerce App{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>User Profile</h2>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ user.username }}</h5>
+        <p class="card-text">Email: {{ user.email }}</p>
+        <p class="card-text">Member since: {{ user.created_at.strftime('%Y-%m-%d') }}</p>
+        <a href="{{ url_for('auth.change_password') }}" class="btn btn-primary">Change Password</a>
+    </div>
+</div>
+
+<div class="mt-4">
+    <h3>Order History</h3>
+    {% if user.orders %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in user.orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.created_at.strftime('%Y-%m-%d') }}</td>
+                <td>${{ "%.2f"|format(order.total_amount) }}</td>
+                <td>{{ order.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>You haven't placed any orders yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
