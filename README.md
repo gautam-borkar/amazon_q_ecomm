@@ -100,3 +100,17 @@ app/
 - PyOTP for OTP generation
 - Stripe for payment processing
 - Bootstrap 5 for frontend styling
+
+
+Prompt 1:
+-----------
+Write a python application that needs to have the following core functionalities:
+- Registration module
+- Login through username and password with authentication using an OTP
+- Change password
+- Forgot password
+- Product catalog with amount, images and description
+- Add to cart
+- Checkout and payment module
+
+Follow best coding practices for python.
